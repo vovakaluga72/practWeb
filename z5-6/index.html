@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="МКФ">
+  <meta name="keywords" content="Bootstrap 5, картонная фабрика, коробки, гофрокартон">
+  <meta name="description" content="Главная страница Московской картонной фабрики на сетке Bootstrap 5.">
+  <title>МКФ - Bootstrap</title>
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+  <header class="sticky-top bg-white shadow-sm">
+    <div class="container py-2">
+      <div class="row g-3 align-items-center">
+        <div class="col-7 col-md-3 col-lg-2">
+          <a class="navbar-brand d-inline-block" href="#top" aria-label="На главную">
+            <img class="site-logo" src="img/logo.jpg" alt="Логотип Московской картонной фабрики" title="Логотип">
+          </a>
+        </div>
+        <div class="col-5 col-md-3 col-lg-2 text-end text-md-start">
+          <div class="d-inline-flex align-items-center gap-2">
+            <button class="btn btn-outline-teal btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-controls="cartCanvas">
+              Корзина
+            </button>
+            <button class="btn btn-outline-teal btn-sm d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Открыть меню">
+              ☰ Меню
+            </button>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <form class="input-group" action="#" method="get">
+            <input class="form-control" type="search" name="search" placeholder="Поиск по каталогу" required>
+            <button class="btn btn-teal" type="submit" data-bs-toggle="tooltip" data-bs-title="Найти товары">Найти</button>
+          </form>
+        </div>
+        <div class="col-12 col-lg-4 text-lg-end">
+          <a class="phone-link d-none d-lg-inline-block" href="tel:+74957892669">+7 (495) 789-26-69</a>
+          <button class="btn btn-link teal-link p-0 ms-3 d-none d-lg-inline-block" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Написать письмо</button>
+        </div>
+      </div>
+    </div>
+
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark nav-teal">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#top">Главная</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#catalog" role="button" data-bs-toggle="dropdown" aria-expanded="false">Каталог</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#boxes">Картонные коробки</a></li>
+                <li><a class="dropdown-item" href="#parts">Комплектующие</a></li>
+                <li><a class="dropdown-item" href="#quality">Гофрокартон</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#custom">Разработка</a></li>
+            <li class="nav-item"><a class="nav-link" href="#steps">Процесс</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+            <li class="nav-item d-lg-none">
+              <button class="btn btn-link teal-link p-0" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Написать письмо</button>
+            </li>
+          </ul>
+          <button class="btn btn-light btn-sm" type="button" id="showToast">Добавить уведомление</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="bg-white">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-12">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="img/brand-banner.png" class="d-block w-100 hero-banner" alt="Московская картонная фабрика" title="Московская картонная фабрика">
+                </div>
+                <div class="carousel-item">
+                  <img src="img/hero-girl.jpg" class="d-block w-100 hero-banner" alt="Девушка с картонными коробками" title="Девушка с картонными коробками">
+                </div>
+                <div class="carousel-item">
+                  <img src="img/custom-2.png" class="d-block w-100 hero-banner" alt="Индивидуальная упаковка" title="Индивидуальная упаковка">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Предыдущий слайд">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Следующий слайд">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-white py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-5">
+            <h1 class="section-title text-lg-start">Картонные коробки и гофрокартон</h1>
+            <p class="lead-card p-3 mb-3">Собственное производство с 1994 года. Разрабатываем и выпускаем упаковку для бизнеса, доставки и хранения.</p>
+            <div class="collapse" id="heroMore">
+              <p class="text-muted">Подбираем тип картона, рассчитываем конструкцию, готовим макет, печать и доставку. Работаем с партиями для интернет-магазинов, производств и торговых сетей.</p>
+            </div>
+            <button class="btn btn-teal" type="button" data-bs-toggle="collapse" data-bs-target="#heroMore" aria-expanded="false" aria-controls="heroMore">
+              Читать далее
+            </button>
+          </div>
+          <div class="col-12 col-lg-7">
+            <img class="rounded-1 shadow-soft w-100 content-img" src="img/hero-girl.jpg" alt="Девушка держит коробки" title="Девушка держит коробки">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band py-4">
+      <div class="container">
+        <div class="row g-4 justify-content-center text-center text-md-start">
+          <div class="col-12 col-md-4">
+            <h2 class="stat-number">6</h2>
+            <p class="mb-0">Лет успешной работы на рынке</p>
+          </div>
+          <div class="col-12 col-md-4">
+            <h2 class="stat-number">170</h2>
+            <p class="mb-0">Сотрудников в команде</p>
+          </div>
+          <div class="col-12 col-md-4">
+            <h2 class="stat-number">593</h2>
+            <p class="mb-0">Постоянных клиента</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog" class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-3 align-items-center mb-4">
+          <div class="col-12 col-md-8">
+            <h2 class="section-title text-md-start mb-0">Наша продукция</h2>
+          </div>
+          <div class="col-12 col-md-4 text-md-end">
+            <button class="btn btn-teal" type="button" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-title="Каталог" data-bs-content="В полном каталоге можно выбрать размер, марку картона и тип печати.">
+              Весь каталог
+            </button>
+          </div>
+        </div>
+
+        <ul class="nav nav-tabs mb-4" id="productTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="boxes-tab" data-bs-toggle="tab" data-bs-target="#boxes" type="button" role="tab" aria-controls="boxes" aria-selected="true">Коробки</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="parts-tab" data-bs-toggle="tab" data-bs-target="#parts" type="button" role="tab" aria-controls="parts" aria-selected="false">Комплектующие</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="boxes" role="tabpanel" aria-labelledby="boxes-tab" tabindex="0">
+            <div class="row g-4">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/product-1.png" alt="Почтовая коробка" title="Почтовая коробка">
+                  <h3 class="h6 mt-3">Почтовые коробки</h3>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/product-2.png" alt="Коробка для переезда" title="Коробка для переезда">
+                  <h3 class="h6 mt-3">Коробки для переезда</h3>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/product-3.png" alt="Коробка для маркетплейса" title="Коробка для маркетплейса">
+                  <h3 class="h6 mt-3">Для маркетплейсов</h3>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/custom-4.png" alt="Коробка с печатью" title="Коробка с печатью">
+                  <h3 class="h6 mt-3">С фирменной печатью</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="parts" role="tabpanel" aria-labelledby="parts-tab" tabindex="0">
+            <div class="row g-4">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/part-1.png" alt="Клейкая лента" title="Клейкая лента">
+                  <h3 class="h6 mt-3">Клейкая лента</h3>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/part-2.png" alt="Листы гофрокартона" title="Листы гофрокартона">
+                  <h3 class="h6 mt-3">Листы гофрокартона</h3>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/part-3.png" alt="Воздушно-пузырчатая пленка" title="Воздушно-пузырчатая пленка">
+                  <h3 class="h6 mt-3">Пузырчатая пленка</h3>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <article class="product-card h-100 p-3 text-center">
+                  <img src="img/part-4.png" alt="Стрейч пленка" title="Стрейч пленка">
+                  <h3 class="h6 mt-3">Стрейч пленка</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom" class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-5">
+            <h2 class="section-title text-lg-start">Индивидуальная упаковка</h2>
+            <p class="text-muted">Проектируем конструкцию, визуализируем будущую упаковку и подбираем материал под задачу.</p>
+            <div class="progress mb-3" role="progressbar" aria-label="Готовность макета" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-teal" style="width: 75%">75%</div>
+            </div>
+            <button class="btn btn-teal" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Заказать расчет</button>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="row g-3">
+              <div class="col-6"><img class="gallery-img" src="img/custom-1.png" alt="Пример упаковки 1" title="Пример упаковки 1"></div>
+              <div class="col-6"><img class="gallery-img" src="img/custom-2.png" alt="Пример упаковки 2" title="Пример упаковки 2"></div>
+              <div class="col-6"><img class="gallery-img" src="img/custom-3.png" alt="Пример упаковки 3" title="Пример упаковки 3"></div>
+              <div class="col-6"><img class="gallery-img" src="img/custom-4.png" alt="Пример упаковки 4" title="Пример упаковки 4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quality" class="py-5 quality-bg">
+      <div class="container">
+        <div class="row g-3 justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-8">
+            <h2 class="section-title">Гофрокартон высокого качества</h2>
+            <p class="text-muted mb-0">Три популярных варианта материала для разных условий перевозки и хранения.</p>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4">
+            <article class="quality-card p-4 text-center h-100">
+              <img src="img/quality-1.png" alt="Трехслойный гофрокартон" title="Трехслойный гофрокартон">
+              <h3 class="h6 mt-3">Трехслойный</h3>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="quality-card p-4 text-center h-100">
+              <img src="img/quality-2.png" alt="Пятислойный гофрокартон" title="Пятислойный гофрокартон">
+              <h3 class="h6 mt-3">Пятислойный</h3>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="quality-card p-4 text-center h-100">
+              <img src="img/quality-3.png" alt="Влагостойкий гофрокартон" title="Влагостойкий гофрокартон">
+              <h3 class="h6 mt-3">Влагостойкий</h3>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps" class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-3 justify-content-center text-center mb-4">
+          <div class="col-12 col-lg-9">
+            <h2 class="section-title">Комплексно подходим к задачам</h2>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-xl-4">
+            <article class="step-card h-100 p-3">
+              <img src="img/step-1.jpg" alt="Выбор формы" title="Выбор формы">
+              <h3 class="h6 mt-2">Выбор формы</h3>
+              <p class="small mb-0">Поможем выбрать форму, размер и конструкцию.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <article class="step-card h-100 p-3">
+              <img src="img/step-2.jpg" alt="3D-модель" title="3D-модель">
+              <h3 class="h6 mt-2">3D-модель</h3>
+              <p class="small mb-0">Подготовим визуализацию будущей упаковки.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <article class="step-card h-100 p-3">
+              <img src="img/step-3.jpg" alt="Упаковка готова" title="Упаковка готова">
+              <h3 class="h6 mt-2">Готовый тираж</h3>
+              <p class="small mb-0">Произведем и подготовим заказ к отгрузке.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-12 col-lg-6">
+            <h2 class="section-title text-lg-start">FAQ по заказу</h2>
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">Можно заказать нестандартный размер?</button></h3>
+                <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Да, мы подбираем размеры и конструкцию под конкретный товар.</div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">Есть ли печать на коробках?</button></h3>
+                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Да, можно нанести логотип, текст, маркировку и фирменный дизайн.</div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">Как быстро выполняется заказ?</button></h3>
+                <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Срок зависит от тиража и сложности макета, расчет выполняется после заявки.</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6" id="reviews">
+            <h2 class="section-title text-lg-start">Отзывы клиентов</h2>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <article class="review-card p-3 h-100">
+                  <h3 class="h6">Дмитрий Н.</h3>
+                  <p class="mb-0 small">Сделали хорошую скидку и помогли выбрать коробки под склад.</p>
+                </article>
+              </div>
+              <div class="col-12 col-md-6">
+                <article class="review-card p-3 h-100">
+                  <h3 class="h6">Сергей Н.</h3>
+                  <p class="mb-0 small">Заказали 5000 коробок. Сроки выдержали, качество отличное.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-3 justify-content-center text-center mb-4">
+          <div class="col-12">
+            <h2 class="section-title">Наши клиенты</h2>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center align-items-center">
+          <div class="col-12 col-md-4">
+            <a class="client-link p-3 d-block" href="https://av.ru/" target="_blank" rel="noopener noreferrer">
+              <img src="img/client-azbuka.png" alt="Азбука Вкуса" title="Азбука Вкуса">
+            </a>
+          </div>
+          <div class="col-12 col-md-4">
+            <a class="client-link p-3 d-block" href="https://lukoil.ru/" target="_blank" rel="noopener noreferrer">
+              <img src="img/client-lukoil.png" alt="Лукойл" title="Лукойл">
+            </a>
+          </div>
+          <div class="col-12 col-md-4">
+            <a class="client-link p-3 d-block" href="https://www.ugmk.com/" target="_blank" rel="noopener noreferrer">
+              <img src="img/client-ugmk.png" alt="УГМК" title="УГМК">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacts" class="footer-teal py-4 text-white">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-md-4">
+          <img class="footer-logo mb-2" src="img/logo.jpg" alt="Логотип в подвале" title="Логотип в подвале">
+          <p class="mb-0 small">Московская картонная фабрика</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <nav class="nav flex-column">
+            <a class="nav-link text-white p-0 mb-1" href="#catalog">Каталог</a>
+            <a class="nav-link text-white p-0 mb-1" href="#custom">Разработка</a>
+            <a class="nav-link text-white p-0" href="#contacts">Контакты</a>
+          </nav>
+        </div>
+        <div class="col-12 col-md-4 text-md-end">
+          <a class="text-white fw-semibold d-block" href="tel:+74957892669">+7 (495) 789-26-69</a>
+          <a class="text-white d-block" href="mailto:info@mkfgroup.ru">info@mkfgroup.ru</a>
+          <p class="mb-0 small">пн.-вс.: 07:00 - 22:00</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" role="dialog" aria-labelledby="cartCanvasLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title h5" id="cartCanvasLabel">Корзина</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>В корзине пока нет товаров. Добавьте коробки из каталога или отправьте заявку на расчет.</p>
+      <button class="btn btn-teal w-100" type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">Оставить заявку</button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="feedbackModalLabel">Написать письмо</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" for="nameInput">Ваше имя</label>
+              <input class="form-control" id="nameInput" type="text" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="emailInput">Email</label>
+              <input class="form-control" id="emailInput" type="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="messageInput">Сообщение</label>
+              <textarea class="form-control" id="messageInput" rows="4" required></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-teal">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">МКФ</strong>
+        <small>сейчас</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+      <div class="toast-body">Заявка сохранена. Мы скоро свяжемся с вами.</div>
+    </div>
+  </div>
+
+  <div class="position-fixed bottom-0 start-0 p-3" aria-hidden="true">
+    <div class="spinner-border text-teal" role="status">
+      <span class="visually-hidden">Загрузка...</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
